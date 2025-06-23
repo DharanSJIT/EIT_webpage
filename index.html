@@ -893,6 +893,150 @@
         .li {
             list-style-type: none;
         }
+
+        /* Mobile devices (max-width: 480px) */
+        @media (max-width: 480px) {
+
+            h1,
+            .text-5xl,
+            .text-4xl {
+                font-size: 1.75rem;
+            }
+
+            h2,
+            .text-3xl {
+                font-size: 1.5rem;
+            }
+
+            .text-xl,
+            p,
+            .text-lg {
+                font-size: 1rem;
+            }
+
+            .px-48 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .py-80,
+            .py-20,
+            .py-16 {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            .grid,
+            .grid-2,
+            .grid-3,
+            .grid-4,
+            .md-grid-2,
+            .md-grid-3,
+            .md-grid-4,
+            .lg-grid-2,
+            .lg-grid-3 {
+                grid-template-columns: 1fr !important;
+            }
+
+            .dashboard-image {
+                height: auto;
+                width: 100%;
+                margin: 1rem 0;
+            }
+
+            .btn {
+                width: 100%;
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .feature-icon {
+                height: 3rem;
+                width: 3rem;
+                font-size: 1.5rem;
+            }
+
+            .eit-gradient,
+            .section-white,
+            .section-gray,
+            .section-gradient-subtle {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            #hero {
+                padding-top: 5rem;
+            }
+
+            .max-w-7xl,
+            .max-w-6xl,
+            .max-w-4xl,
+            .max-w-3xl {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .relative img,
+            .absolute img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+
+            .check-icon-small {
+                width: 1rem;
+                height: 1rem;
+            }
+
+            .hero-decoration-1,
+            .hero-decoration-2 {
+                display: none;
+            }
+        }
+
+        .hero-buttons {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.75rem;
+            z-index: 50;
+        }
+
+        /* Tablet View */
+        @media (max-width: 1024px) {
+            .hero-buttons {
+                top: 0.75rem;
+                right: 0.75rem;
+                gap: 0.5rem;
+            }
+
+            .hero-buttons .btn {
+                padding: 0.6rem 1.25rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Mobile View */
+        @media (max-width: 640px) {
+            .hero-buttons {
+                position: static;
+                margin-top: .20rem;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .hero-buttons .btn {
+                width: 90%;
+                max-width: 300px;
+                font-size: 1rem;
+                padding: 0.75rem;
+            }
+        }
     </style>
 </head>
 
@@ -900,16 +1044,22 @@
     <!-- Hero Section -->
     <section class="eit-gradient text-white relative overflow-hidden px-48 py-80">
         <!-- Login/Sign in buttons in top right -->
-        <div class="absolute top-4 right-4 flex gap-3 z-50">
+        <!-- <div class="absolute top-4 right-4 flex gap-3 z-50" class="login">
+            <button class="btn login btn-outline">Log In</button>
+            <button class="btn signup ">Sign Up</button>
+        </div> -->
+
+        <div class="hero-buttons">
             <button class="btn btn-outline">Log In</button>
-            <button class="btn">Sign Up</button>
+            <button class="btn btn-primary">Sign Up</button>
         </div>
+
 
         <!-- Background decorative elements -->
         <div class="hero-decoration-1"></div>
         <div class="hero-decoration-2"></div>
 
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-7xl mx-auto" id="hero">
             <div class="grid lg-grid-2 gap-16 items-center min-h-600">
                 <!-- Left Content -->
                 <div class="space-y-8 relative z-10">
@@ -1171,7 +1321,8 @@
                 <div class="relative" style="margin-right: 2rem;">
                     <img src="./dashboard-1.png" alt="EIT Analytics Dashboard"
                         class="rounded-lg shadow-2xl animate-float dashboard-image" />
-                    <div class="absolute bg-white rounded-lg p-4 shadow-lg" style="bottom: -1rem; right: -1rem; padding: 0.675rem;">
+                    <div class="absolute bg-white rounded-lg p-4 shadow-lg"
+                        style="bottom: -1rem; right: -1rem; padding: 0.675rem;">
                         <div class="flex items-center gap-2 font-semibold gradient-text">
                             <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
